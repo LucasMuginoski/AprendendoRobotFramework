@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.0 on win32)" generated="20211213 17:13:27.484" rpa="false" schemaversion="2">
+<suite id="s1" name="Cadastro Alunos" source="C:\RobotExpert\bodytest\App Action\testes\cadastro_alunos.robot">
+<kw name="Start Browser Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20211213 17:13:29.843" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\RobotExpert\\bodytest\\App Action\\logs\\browser\\traces\\6f4a5f6c-02f1-4830-9e12-e8616d138d45"}</msg>
+<msg timestamp="20211213 17:13:34.932" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\RobotExpert\\bodytest\\App Action\\logs\\browser\\traces\\6f4a5f6c-02f1-4830-9e12-e8616d138d45"}</msg>
+<status status="PASS" starttime="20211213 17:13:29.842" endtime="20211213 17:13:34.932"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>about:blank</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20211213 17:13:37.603" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<msg timestamp="20211213 17:13:37.606" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20211213 17:13:34.933" endtime="20211213 17:13:37.610"/>
+</kw>
+<status status="PASS" starttime="20211213 17:13:29.842" endtime="20211213 17:13:37.615"/>
+</kw>
+<test id="s1-t1" name="Email não pode estar registrado em duplicidade">
+<kw name="Go To Login Page" library="auth">
+<kw name="Go To" library="Browser">
+<arg>https://bodytest-web-muginoski.herokuapp.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20211213 17:13:47.857" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20211213 17:13:47.864" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
+=========================== logs ===========================
+navigating to "https://bodytest-web-muginoski.herokuapp.com/", waiting until "load"
+============================================================</msg>
+<status status="FAIL" starttime="20211213 17:13:37.654" endtime="20211213 17:13:47.864"/>
+</kw>
+<status status="FAIL" starttime="20211213 17:13:37.653" endtime="20211213 17:13:47.865"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>admin@bodytest.com</arg>
+<arg>pwd123</arg>
+<status status="NOT RUN" starttime="20211213 17:13:47.866" endtime="20211213 17:13:47.866"/>
+</kw>
+<kw name="User Should Be Logged in" library="nav">
+<arg>Administrador</arg>
+<status status="NOT RUN" starttime="20211213 17:13:47.867" endtime="20211213 17:13:47.867"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{student}</var>
+<arg>name=Ross Geller</arg>
+<arg>email=ross.geller@gmail.com</arg>
+<arg>age=25</arg>
+<arg>weight=80</arg>
+<arg>feet_tall=1.80</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20211213 17:13:47.869" endtime="20211213 17:13:47.869"/>
+</kw>
+<kw name="Insert Student" library="DeloreanLibrary">
+<arg>${student}</arg>
+<status status="NOT RUN" starttime="20211213 17:13:47.870" endtime="20211213 17:13:47.870"/>
+</kw>
+<kw name="Go To Students" library="nav">
+<status status="NOT RUN" starttime="20211213 17:13:47.870" endtime="20211213 17:13:47.871"/>
+</kw>
+<kw name="Go To Form Student" library="students">
+<status status="NOT RUN" starttime="20211213 17:13:47.873" endtime="20211213 17:13:47.873"/>
+</kw>
+<kw name="New Student" library="students">
+<arg>${student}</arg>
+<status status="NOT RUN" starttime="20211213 17:13:47.875" endtime="20211213 17:13:47.875"/>
+</kw>
+<kw name="Toaster Text Should Be" library="components">
+<arg>Email já existe no sistema.</arg>
+<status status="NOT RUN" starttime="20211213 17:13:47.877" endtime="20211213 17:13:47.877"/>
+</kw>
+<kw name="Thinking And Take Screenshot" library="base" type="TEARDOWN">
+<arg>2</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${timeout}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211213 17:13:49.885" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211213 17:13:47.881" endtime="20211213 17:13:49.885"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20211213 17:13:50.055" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211213 17:13:49.885" endtime="20211213 17:13:50.055"/>
+</kw>
+<status status="PASS" starttime="20211213 17:13:47.880" endtime="20211213 17:13:50.055"/>
+</kw>
+<tag>Dup</tag>
+<status status="FAIL" starttime="20211213 17:13:37.616" endtime="20211213 17:13:50.056">TimeoutError: page.goto: Timeout 10000ms exceeded.
+=========================== logs ===========================
+navigating to "https://bodytest-web-muginoski.herokuapp.com/", waiting until "load"
+============================================================</status>
+</test>
+<doc>Suite da tela de Cadastro de alunos</doc>
+<status status="FAIL" starttime="20211213 17:13:27.488" endtime="20211213 17:13:50.069"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Dup</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Cadastro Alunos">Cadastro Alunos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
