@@ -1,5 +1,5 @@
 ***Settings***
-Documentation   Casos de atualização de alunso
+Documentation   Casos de atualização de aluno já existente
 
 Resource    ${EXECDIR}/resources/base.robot
 
@@ -26,8 +26,3 @@ Cenário: Atualizar um aluno já cadastrado
     Thinking And Take Screenshot    2
     LocalStorage Clear
 
-***Keywords***
-Go To Student Update Form
-    [Arguments]             ${email}
-    Click                   xpath=//td[contains(text(),"${email}")]/..//a[@class="edit"]
-    Wait For Elements State    css=h1 >> text="Edição de aluno"     visible     5

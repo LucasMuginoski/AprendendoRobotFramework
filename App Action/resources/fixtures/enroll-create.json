@@ -1,0 +1,15 @@
+{
+    "student":{
+        "name": "Sarah Connor",
+        "email": "sarinha.ciborg@skynet.com",
+        "age": 36,
+        "weight": 58,
+        "feet_tall": 1.62
+    },
+    "plan": {
+        "title": "Plano Fit",
+        "duration": 6,
+        "price": 29.99
+    },
+    "days": 182
+}

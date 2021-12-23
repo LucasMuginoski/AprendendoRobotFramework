@@ -2,6 +2,7 @@
 Documentation   Ações de componentes genéricos
 
 ***Keywords***
+## ========== Validations ==========
 Toaster Text Should Be 
     [Arguments]     ${expected_text}
     Wait For Elements State      css=.Toastify__toast-body >> text=${expected_text}        visible      7
@@ -9,13 +10,6 @@ Toaster Text Should Be
 Alert Text Should Be
     [Arguments]     ${expected_text}
     Wait For Elements State     css=form span >> text=${expected_text}     visible     5
-
-Get Required Alerts
-    [Arguments]     ${index}
-    
-    ${span}     Get Text    xpath=(//form//span)[${index}]
-
-    [Return]      ${span}
 
 Field Should Be Type
     [Arguments]         ${element}      ${type}
@@ -34,3 +28,11 @@ Total Item Should Be
 
     Wait For Elements State     css=#pagination .total       visible     5
     Get Text                    ${element}                   ==       Total: ${number}
+
+## ========== Return Elements & Text ==========
+Get Required Alerts
+    [Arguments]     ${index}
+    
+    ${span}     Get Text    xpath=(//form//span)[${index}]
+
+    [Return]      ${span}
