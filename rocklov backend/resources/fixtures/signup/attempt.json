@@ -1,0 +1,34 @@
+{
+    "empty_name":{
+        "name":"",
+        "email":"steve.rogers@gmail.com",
+        "password":"sdf56JKL!"
+    },
+    "empty_email":{
+        "name":"Steve Rogers",
+        "email":"",
+        "password":"sdf56JKL!"
+    },
+    "empty_pass":{
+        "name":"Steve Rogers",
+        "email":"steve.rogers@gmail.com",
+        "password":""
+    },
+    "without_name":{
+        "email":"steve.rogers@gmail.com",
+        "password":"sdf56JKL!"
+    },
+    "without_email":{
+        "name":"Steve Rogers",
+        "password":"sdf56JKL!"
+    },
+    "without_pass":{
+        "name":"Steve Rogers",
+        "email":"steve.rogers@gmail.com"
+    },
+    "wrong_email":{
+        "name":"Steve Rogers",
+        "email":"steve.rogers%gmail.com",
+        "password":"sdf56JKL!"
+    }
+}
